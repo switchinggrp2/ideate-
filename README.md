@@ -25,7 +25,7 @@ int main() {
         {"Santiago Bernabeu", 81044},
         {"San Siro", 80018},
     };
-    int count = 5;  // Initial number of entries in the directory
+    int count = 5;  
     char inputStadiumName[STADIUM_NAME_LENGTH];
     int choice;
 
@@ -36,20 +36,20 @@ int main() {
         printf("3. Exit\n");
         printf("Enter your choice: ");
         
-        if (scanf("%d", &choice) != 1) {  // Input validation for menu choice
+        if (scanf("%d", &choice) != 1) {  
             printf("Invalid input. Please enter a number.\n");
-            while (getchar() != '\n');  // Clear invalid input
+            while (getchar() != '\n');  
             continue;
         }
 
         switch (choice) {
             case 1:
                 printf("Enter the stadium name to search: ");
-                scanf(" %[^\n]%*c", inputStadiumName);  // Reading the full line with spaces
+                scanf(" %[^\n]%*c", inputStadiumName); 
 
                 int found = 0;
                 for (int i = 0; i < count; i++) {
-                    if (strcasecmp(stadiums[i].stadiumName, inputStadiumName) == 0) {  // Case-insensitive comparison
+                    if (strcasecmp(stadiums[i].stadiumName, inputStadiumName) == 0) { 
                         printf("Stadium Name: %s, Capacity: %d\n", stadiums[i].stadiumName, stadiums[i].capacity);
                         found = 1;
                         break;
